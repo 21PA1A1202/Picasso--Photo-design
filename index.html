@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picasso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo"></div>
+        <div id="nav-buttons">
+            <button id="save"></button>
+            <label id="upload-label" for="upload">Upload</label>
+            <input type="file" id="upload" accept="image/*" style="display: none;">
+            <button id="publish-button">Publish</button>
+        </div>
+    </nav>
+    
+    
+    
+    
+    
+    <div id="tools">
+        <h2>Tools</h2>
+        <div class="too">
+
+<div class="f">
+        <button class="tool-button cut" id="cut-tool"></button>
+        <button class="tool-button move" id="move-resize-tool"></button>
+        </div>
+        <div class="f">
+            <button class="tool-button text" id="text-tool"></button>
+        <button class="tool-button delete" id="delete-tool"></button>
+        
+        </div>
+        <div class="f">
+        <button class="tool-button pencil" id="pencil-tool"></button>
+        <button class="tool-button eraser" id="erase-tool"></button>
+        
+        </div>
+        <button class="tool-button shape" id="square-tool"></button>
+        </div>
+        <div id="text-controls" style="display: none;">
+            <div class="slider-container">
+                <label for="text-content">Text Content: </label>
+                <input type="text" id="text-content" placeholder="Enter text here" disabled>
+            </div>
+            <div class="slider-container">
+                <label for="text-font-size">Font Size: </label>
+                <input type="range" class="slider" id="text-font-size" min="10" max="100" value="30" disabled>
+            </div>
+            <div class="color-picker-container">
+                <label for="text-color">Text Color: </label>
+                <input type="color" id="text-color" value="#000000" disabled>
+            </div>
+            <div class="dropdown-container">
+                <label for="font-family">Font: </label>
+                <select id="font-family">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Palatino">Palatino</option>
+                    <option value="Garamond">Garamond</option>
+                    <option value="Bookman">Bookman</option>
+                    <option value="Trebuchet MS">Trebuchet MS</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Monaco">Monaco</option>
+                    <option value="Lucida Console">Lucida Console</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Geneva">Geneva</option>
+                    <option value="Candara">Candara</option>
+                    <option value="Optima">Optima</option>
+                    <option value="Brush Script MT">Brush Script MT</option>
+                    <option value="Futura">Futura</option>
+                </select>
+            </div>
+        </div>
+        <div class="slider-container">
+            <label for="layer-width">Width: </label>
+            <input type="text" class="in" id="layer-width" disabled value="0"> px
+        </div>
+        <div class="slider-container">
+            <label for="layer-height">Height: </label>
+            <input type="text" id="layer-height" class="in" disabled value="0"> px
+        </div>
+        <div class="slider-container">
+            <label for="opacity-slider">Opacity: </label>
+            <input type="range" id="opacity-slider" class="slider" min="0" max="100" value="100">
+        </div>
+       
+        <div id="pencil-controls" style="display: none;">
+            <div class="slider-container">
+                <label for="pencil-color">Pencil Color: </label>
+                <input type="color" id="pencil-color" value="#000000">
+            </div>
+            <div class="slider-container">
+                <label for="pencil-size">Pencil Size: </label>
+                <input type="range" class="slider" id="pencil-size" min="1" max="20" value="5">
+            </div>
+        </div>
+        
+<!-- Eraser Tool -->
+
+<div id="eraser-controls" style="display: none;">
+    <div class="slider-container">
+        <label for="erase-size">Eraser Size: </label>
+        <input type="range" id="erase-size" class="slider" min="5" max="50" value="10">
+    </div>
+</div>
+
+<!-- Text Tool -->
+
+
+
+<!-- Square Tool -->
+
+<div id="square-controls" style="display: none;">
+    <div class="color-picker-container">
+        <label for="square-fill-color">Fill Color: </label>
+        <input type="color" id="square-fill-color" value="#D3D3D3">
+    </div>
+    <div class="color-picker-container">
+        <label for="square-stroke-color">Stroke Color: </label>
+        <input type="color" id="square-stroke-color" value="#000000">
+    </div>
+    <div class="slider-container">
+        <label for="square-stroke-width">Stroke Width: </label>
+        <input type="range" class="slider" id="square-stroke-width" min="0" max="20" value="2">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+    <div id="editor">
+        
+        
+        <canvas id="canvas"></canvas>
+        
+      
+    </div>
+    <div id="layers-panel">
+        <h2>Layers</h2>
+        <div id="layers"></div>
+    </div>
+    <script src="tools.js"></script>
+    <script src="layers.js"></script>
+    <script src="canvas.js"></script>
+    <script src="drawing.js"></script>
+    <script src="text.js"></script>
+    
+</body>
+</html>
